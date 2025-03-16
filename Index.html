@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Trading Strategies - Avinash Gupta</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #4caf50;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #4caf50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f1f1f;
+            color: #4caf50;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        a:hover {
+            color: #76ff03;
+        }
+
+        /* Candlestick animation styling */
+        .candlestick-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .candle {
+            width: 10px;
+            background-color: #4caf50;
+            animation: flicker 2s infinite alternate ease-in-out;
+        }
+
+        .candle.red {
+            background-color: #f44336;
+        }
+
+        @keyframes flicker {
+            from { height: 20px; }
+            to { height: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Avinash Gupta's Algo Trading Insights</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#strategies">Strategies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Unlock the Power of Algorithmic Trading</h2>
+        <p>Explore proven strategies, data-driven insights, and cutting-edge techniques to dominate the market.</p>
+        <div class="candlestick-container">
+            <div class="candle"></div>
+            <div class="candle red"></div>
+            <div class="candle"></div>
+            <div class="candle red"></div>
+            <div class="candle"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am Avinash Gupta, an experienced trader passionate about algorithmic strategies. This website is dedicated to sharing valuable insights and strategies for traders of all levels.</p>
+    </section>
+
+    <section id="strategies">
+        <h2>Trading Strategies</h2>
+        <p>Stay tuned for detailed breakdowns of my favorite algo strategies, from moving averages to advanced quantitative models.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have questions or want to collaborate? Reach out to me at: <strong>your.email@example.com</strong></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Avinash Gupta | All rights reserved.</p>
+    </footer>
+</body>
+</html>
