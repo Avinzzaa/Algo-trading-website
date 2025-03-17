@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Trading Strategies - Avinash Gupta</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <style>
+        /* General styling */
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background: linear-gradient(90deg, #1f1f1f, #333333);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #4caf50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #76ff03;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #4caf50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(90deg, #1f1f1f, #333333);
+            color: #4caf50;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #121212;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #76ff03;
+        }
+
+        .strategy-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .strategy-card {
+            background-color: #1f1f1f;
+            border: 1px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: scale(1.05);
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Avinash Gupta's Algo Trading Insights</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#strategies">Strategies</a></li>
+                <li><a href="#live-chart">Live Stock Chart</a></li>
+                <li><a href="#btc-chart">BTC Live Chart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Unlock the Power of Algorithmic Trading</h2>
+        <p>Explore proven strategies, data-driven insights, and cutting-edge techniques to dominate the market.</p>
+        <button onclick="window.location='#strategies'">Explore Strategies</button>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am Avinash Gupta, an experienced trader passionate about algorithmic strategies. This website is dedicated to sharing valuable insights and strategies for traders of all levels.</p>
+    </section>
+
+    <section id="strategies">
+        <h2>Trading Strategies</h2>
+        <div class="strategy-container">
+            <div class="strategy-card"><h3>Trendline Breakout with Candlestick Patterns</h3><p>Trade on trendline breakouts confirmed by Hanging Man, Hammer, or Liquidity Sweep patterns for precision entries.</p></div>
+        </div>
+    </section>
+
+    <section id="btc-chart">
+        <h2>BTC/USDT Live Chart</h2>
+        <div id="tradingview_btc"></div>
+        <select id="alertInterval">
+            <option value="30000">30 sec</option>
+            <option value="60000">1 min</option>
+            <option value="300000">5 min</option>
+        </select>
+        <script>
+            new TradingView.widget({
+                "width": "100%",
+                "height": 500,
+                "symbol": "BINANCE:BTCUSDT",
+                "interval": "5",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "container_id": "tradingview_btc"
+            });
+
+            function checkCandlestickPattern() {
+                alert("BTC Strategy Alert: Trendline Breakout with Candlestick Confirmation!");
+                new Audio('https://www.soundjay.com/button/beep-07.wav').play();
+            }
+
+            document.getElementById('alertInterval').addEventListener('change', function() {
+                clearInterval(window.alertInterval);
+                window.alertInterval = setInterval(checkCandlestickPattern, this.value);
+            });
+            
+            window.alertInterval = setInterval(checkCandlestickPattern, 30000);
+        </script>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Avinash Gupta | All rights reserved.</p>
+    </footer>
+</body>
+</html>
